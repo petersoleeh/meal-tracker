@@ -6,11 +6,21 @@ import { Food } from './food.model';
   <div class="jumbotron">
     <h1>The  Meal Tracker!</h1>
   </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
   <h3>My list of food</h3>
     <div class="food" *ngFor="let food of foods" >
-      <p>{{food.name}}</p>
-      <p>{{food.calories}}</p>
-      <p>{{food.details}}</p>
+      <p>Name: {{food.name}}</p>
+      <p>Calories: {{food.calories}}</p>
+      <p>Details: {{food.details}}</p>
+    </div>
+    </div>
+
+    <div class="col-md-4">
+    <h3>Add Food</h3>
+    </div>
+    </div>
     </div>
   `
 })
