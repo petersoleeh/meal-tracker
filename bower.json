@@ -1,0 +1,21 @@
+{
+  "name": "meal-tracker",
+  "description": "A simple web app via Angular that assists a user to track meals eaten in a day and the calories in the foods",
+  "main": "index.js",
+  "authors": [
+    "Peter Maina"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/petersoleeh/meal-tracker",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1"
+  }
+}
