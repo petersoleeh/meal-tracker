@@ -8,20 +8,50 @@ import { Food } from './food.model';
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-md-8">
-  <h3>My list of food</h3>
-    <div class="food" *ngFor="let food of foods" >
-      <p>Name: {{food.name}}</p>
-      <p>Calories: {{food.calories}}</p>
-      <p>Details: {{food.details}}</p>
+  <div class="col-md-8">
+  <div class="food-list">
+    <food-list
+    [childFoodList]="masterFoodList"
+    (clickSender)="showDetails($event)"
+
+    ></food-list>
+  </div>
+  <h3>My List Of Food:</h3>
+  <ol class="food">
+    <li *ngFor="let currentFood of foods" >
+      <p>Name: {{currentFood.name}}</p>
+      <p>Calories: {{currentFood.calories}}</p>
+      <p>Details: {{currentFood.details}}</p>
+      <button (click)="showDetails(currentFood)" class="btn btn-primary">Edit</button>
+    </li>
+
+  </ol>
+
+  </div>
+    <div class="col-md-4">
+    <h3 class="add">Add Food:</h3>
+    <div>
+      <input placeholder="Food">
+    </div>
+    <div>
+      <input placeholder="Calories">
+    <div>
+      <input placeholder="Details">
+    </div>
+      <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+    <div class="edit">
+      <edit-food
+      [childSelectedFood]="selectedFood"
+      (doneClickedSender)="finishedEditing()"
+      ></edit-food>
+    </div>
+
+
+    </div>
     </div>
     </div>
 
-    <div class="col-md-4">
-    <h3>Add Food</h3>
-    </div>
-    </div>
-    </div>
   `
 })
 
@@ -34,5 +64,12 @@ export class AppComponent {
     new Food("Bacon,eggs and cheese", 340, "Greasy to say the least"),
     new Food("Pepperoni Pizza", 310, "Wooooooh!!! such huge calories from a single triangle"),
   ];
+  selectedFood: Food = null;
+  showDetails(clickedFood: Food) {
+    this.selectedFood = clickedFood;
+  }
+  finishedEditing() {
+    this.selectedFood = null;
+  }
 
 }
