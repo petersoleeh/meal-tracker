@@ -16,7 +16,7 @@ import { Food } from './food.model';
 
     ></food-list>
   </div>
-  <h3>My List Of Food:</h3>
+  
   <ol class="food">
     <li *ngFor="let currentFood of foods" >
       <p>Name: {{currentFood.name}}</p>
