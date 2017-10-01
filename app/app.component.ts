@@ -16,7 +16,7 @@ import { Food } from './food.model';
 
     ></food-list>
   </div>
-  
+
   <ol class="food">
     <li *ngFor="let currentFood of foods" >
       <p>Name: {{currentFood.name}}</p>
@@ -24,7 +24,6 @@ import { Food } from './food.model';
       <p>Details: {{currentFood.details}}</p>
       <button (click)="showDetails(currentFood)" class="btn btn-primary">Edit</button>
     </li>
-
   </ol>
 
   </div>
@@ -45,9 +44,8 @@ import { Food } from './food.model';
       [childSelectedFood]="selectedFood"
       (doneClickedSender)="finishedEditing()"
       ></edit-food>
+      <new-food></new-food>
     </div>
-
-
     </div>
     </div>
     </div>
