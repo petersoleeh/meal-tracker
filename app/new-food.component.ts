@@ -4,32 +4,31 @@ import { Food } from './food.model';
 @Component({
   selector: 'new-food',
   template: `
-    <h3>Add Food</h3>
+    <h3>Add Food:</h3>
+    <form>
     <div>
-      <label>Food:</label>
-      <input #newFood>
+      <input placeholder="food" #newName>
     </div>
     <div>
-      <label>Calories:</label>
-      <input #newCalories>
+      <input placeholder="Calories" #newCalories>
     </div>
     <div>
-      <label>Details:</label>
-      <input #newDetails>
-      <button (click)="addClicked(newFood.value, newCalories.value, newDetails.value);
-      newFood.value='';
-      newCalories.value='';
-      newDetails.value='';
-      ">Add</button>
+      <input placeholder='Details' #newDetails>
     </div>
+    <button class="btn btn-primary" (click)="addClicked(newName.value, newCalories.value, newDetails.value);
+    newName.value='';
+    newCalories.value='';
+    newDetails.value='';
+    ">Add</button>
+    </form>
 
   `
 })
 
 export class NewFoodComponent {
   @Output() newFoodSender = new EventEmitter();
-  addClicked(food: string, calories: number, details: string) {
-    var newFoodToAdd: Food = new Food(food, calories, details);
+  addClicked(name: string, calories: number, details: string) {
+    var newFoodToAdd: Food = new Food(name, calories, details);
     this.newFoodSender.emit(newFoodToAdd);
   }
 

@@ -4,8 +4,8 @@ import { Food } from './food.model';
 @Component({
   selector: 'edit-food',
   template: `
-      <h3>Edit Food:</h3>
       <div *ngIf="childSelectedFood">
+      <h3>Edit Food</h3>
       <div>
         <label>Enter Food:</label>
         <input [(ngModel)]="childSelectedFood.name">

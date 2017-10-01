@@ -11,12 +11,11 @@ import { Food } from './food.model';
   <div class="col-md-8">
   <div class="food-list">
     <food-list
-    [childFoodList]="masterFoodList"
+    [childFoodList]="foods"
     (clickSender)="showDetails($event)"
 
     ></food-list>
   </div>
-
   <ol class="food">
     <li *ngFor="let currentFood of foods" >
       <p>Name: {{currentFood.name}}</p>
@@ -25,28 +24,18 @@ import { Food } from './food.model';
       <button (click)="showDetails(currentFood)" class="btn btn-primary">Edit</button>
     </li>
   </ol>
-
   </div>
+  
     <div class="col-md-4">
-    <h3 class="add">Add Food:</h3>
-    <div>
-      <input placeholder="Food">
-    </div>
-    <div>
-      <input placeholder="Calories">
-    <div>
-      <input placeholder="Details">
-    </div>
-      <button type="submit" class="btn btn-primary">Add</button>
-    </div>
+    <new-food
+      (newFoodSender)="addFood($event)"
+    ></new-food>
+
     <div class="edit">
       <edit-food
       [childSelectedFood]="selectedFood"
       (doneClickedSender)="finishedEditing()"
       ></edit-food>
-      <new-food>
-        (newFoodSender)="addFood($event)"
-      </new-food>
     </div>
     </div>
     </div>
