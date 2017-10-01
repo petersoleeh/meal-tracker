@@ -56,7 +56,7 @@ import { Food } from './food.model';
 })
 
 export class AppComponent {
-  foods: Food[] = [
+  public foods: Food[] = [
     new Food("Hot Dog", 137, "Some how dry."),
     new Food("Potato chips", 221, "I really like them well DRAINED!!"),
     new Food("Chicken Sandwich", 660, "Overall Tasty"),
