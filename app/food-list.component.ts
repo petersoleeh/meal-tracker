@@ -1,5 +1,8 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Food } from './food.model';
+import { NewFoodComponent } from './new-food.component';
+import { EditFoodComponent } from './edit-food.component';
+import { CaloriesPipe } from './calories.pipe';
 
 @Component({
   selector: 'food-list',
@@ -13,7 +16,6 @@ import { Food } from './food.model';
     </li>
 
   </ol>
-
   `
 })
 
